@@ -1,6 +1,7 @@
 @extends('layouts.app')
-<link rel="stylesheet" href="{{ asset('css/question1.css') }}">
+
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/question1.css') }}">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -10,7 +11,7 @@
                     <!--Drop down menu-->
 
                 <button onclick="addTopic()" id="addTopicButton">+ Add topic</button>
-                <h6>or</h6>
+                <h6 id="or">OR</h6>
                 <form action="{{ route('create_question') }}" enctype="multipart/form-data" method="post">
                     @csrf
                      <div class="input-group mb-3">

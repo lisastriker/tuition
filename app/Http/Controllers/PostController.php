@@ -21,7 +21,7 @@ class PostController extends Controller
             $post->topic = request('topicSelected');
         }
         
-        if($post->image != null){
+        if(request('image') != null){
         $post->image = request('image')->store('uploads', 'public');
         }
         $updated = $post->save();

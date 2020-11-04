@@ -1,6 +1,18 @@
 .card{
-    padding:10px;
+    padding:0px;
+    margin-bottom:10px;
 }
+@font-face {
+    font-family: 'Prime-Regular';
+    font-style: 'normal';
+    font-weight: '700';
+    src: url('/fonts/Prime-Regular.tff'), /* IE9 Compat Modes */
+         url('/fonts/Prime-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('/fonts/Prime-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('/fonts/Prime-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+
+  }
+
 
 #post_id{
     display:none;
@@ -8,4 +20,33 @@
 
 form{
     padding-top:0;
+}
+
+#answer{
+    border-radius:5px;
+}
+
+#answerLabel{
+    margin-bottom:0;
+}
+
+.topic{
+    padding: 5px 10px 5px 0px;
+    text-align: right;
+    font-weight: bold;
+    background:#EEEEEE;
+}
+.question{
+    margin-top:5px;
+    color:black;
+    font-size:1.3rem;
+    font-weight:bold;
+    font-family:Prime-Regular;
+}
+
+#answerOption, .question, .answerBox{
+    padding-left:10px;
+}
+#submit{
+    margin-top:5px;
 }
