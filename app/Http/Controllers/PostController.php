@@ -8,7 +8,7 @@ class PostController extends Controller
 {
     //
     function index(){
-        $post = Post::all();
+        $post = Post::select('topic')->whereNotNull('topic')->distinct()->get();
         return view('question')->with('posts', $post);
     }
 

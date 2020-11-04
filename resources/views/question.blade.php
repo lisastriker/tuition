@@ -10,6 +10,7 @@
                     <!--Drop down menu-->
 
                 <button onclick="addTopic()" id="addTopicButton">+ Add topic</button>
+                <h6>or</h6>
                 <form action="{{ route('create_question') }}" enctype="multipart/form-data" method="post">
                     @csrf
                      <div class="input-group mb-3">
