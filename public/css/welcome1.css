@@ -1,0 +1,11 @@
+.card{
+    padding:10px;
+}
+
+#post_id{
+    display:none;
+}
+
+form{
+    padding-top:0;
+}
