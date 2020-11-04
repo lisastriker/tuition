@@ -15,7 +15,7 @@ use App\Models\Answer;
 */
 
 Route::get('/', function () {
-    $posts = Post::all();
+    $posts = Post::paginate(5);
     $answers = Answer::all();
     return view('welcome', ['posts'=> $posts, 'answers'=>$answers]);
 });

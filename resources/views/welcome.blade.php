@@ -34,6 +34,10 @@
           @endforeach  
         </div>
     </div>
+    <div class="row justify-content-center">
+    <div class="col-md-8 pag">
+    {{ $posts->links() }}
+    </div></div>
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/welcome1.js') }}"></script>
