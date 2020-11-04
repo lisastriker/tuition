@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use App\Models\Answer;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,8 @@ use App\Models\Post;
 
 Route::get('/', function () {
     $posts = Post::all();
-    return view('welcome')->with('posts', $posts);
+    $answers = Answer::all();
+    return view('welcome', ['posts'=> $posts, 'answers'=>$answers]);
 });
 
 //Auth::routes();

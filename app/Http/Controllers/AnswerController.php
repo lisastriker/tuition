@@ -13,11 +13,10 @@ class AnswerController extends Controller
         $answer->question_id = request('post_id');
         $answer->answer = request('answer');
 
-        $answer->save();
-
+        $updated = $answer->save();
+        if($updated){
+            return redirect('/');
+        }
     }
 }
 
-//DB::table('post')->join('question', 'id', '=', 'post.id')
-//->join('answer', 'user_id', '=', 'answer.user_id')
-//->select('')

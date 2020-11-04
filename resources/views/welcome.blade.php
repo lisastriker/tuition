@@ -9,11 +9,17 @@
                 <h6 href='/profile/{{$post->topic}}'>{{$post->topic}}</h6>
                 <a href='/profile/{{$post->question}}' class="profile">
                 <!--<img src="/storage/{{$post->image}}" height="200px" width="200px">-->
-                {{$post->question}}</a>
+                {{$post->question}}</a> 
+
+            @foreach($answers as $answer)
+                @if($answer->question_id == $post->id)
+                <h6>{{$answer->answer}}</h6>
+                @endif
+            @endforeach
 
                  <form action="{{ route('post_answer') }}" enctype="multipart/form-data" method="post">
                     @csrf
-                    <input value="{{$post->id}}" name="post_id">
+                    <input value="{{$post->id}}" name="post_id"><br>
                     <label for="answer">Answer</label><br>
                     <textarea type="text" id="answer" name="answer" rows="10" cols="50"></textarea><br>
                     <input type="submit" value="Submit"><br>
