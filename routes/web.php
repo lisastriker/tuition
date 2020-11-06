@@ -25,4 +25,5 @@ Route::get('/', function () {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/add_question', [App\Http\Controllers\PostController::class, 'index'])->name('add_question');
 Route::post('/add_question',  [App\Http\Controllers\PostController::class, 'createQuestion'])->name('create_question');
-Route::post('/', [App\Http\Controllers\AnswerController::class, 'postAnswer'])->name('post_answer');
+Route::post('/post_answer', [App\Http\Controllers\AnswerController::class, 'postAnswer'])->name('post_answer');
+Route::post('/delete',[App\Http\Controllers\PostController::class, 'delete'])->name('delete_post');

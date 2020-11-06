@@ -30,13 +30,35 @@
                     <input type="submit" value="Submit" id="submit"><br>
                 </form>
                 </div>
+
+            <!--Delete question-->
+                <div class="answerBox">
+                    @if(@isset($post))
+                    <form method= "post" action ="{{route('delete_post')}}">
+                        @csrf
+                        <div class="btns">
+                        <input type="submit" name="delete" value="Delete Post">
+                        </div>
+
+                        <!--display answer-->
+                        @foreach($answers as $answer)
+                            @if($answer->question_id == $post->id)
+                            <textarea style="display:none;" name="ansDEL">{{$answer->question_id}}</textarea>
+                            @endif
+                        @endforeach
+
+                        <textarea style="display:none;" name="nameDEL">{{$post->id}}</textarea>
+                    </form>
+                    @else
+                    @endif
+                </div>
             </div>
           @endforeach  
         </div>
     </div>
     <div class="row justify-content-center">
     <div class="col-md-8 pag">
-    {{ $posts->links() }}
+    {{ $posts->links("pagination::bootstrap-4") }}
     </div></div>
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
